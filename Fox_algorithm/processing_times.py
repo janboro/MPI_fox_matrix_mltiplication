@@ -53,6 +53,24 @@ processing_times3 = [
     1.6505217552185059,
 ]
 
+processing_times = [
+    0.00020647048950195312,
+    0.0002583838653564453,
+    0.0003075599670410156,
+    0.0003979206085205078,
+    0.0005521774291992188,
+    0.00048732757568359375,
+    0.0006968975067138672,
+    0.0008339881896972656,
+    0.0009326934814453125,
+    0.001631021499633789,
+    0.0015420913696289062,
+    0.0020112991333007812,
+    0.00209808349609375,
+    0.0024499893188476562,
+    0.0029458999633789062,
+]
+
 mean_processing_times = []
 for a, b, c in zip(processing_times1, processing_times2, processing_times3):
     avg_time = np.mean([a, b, c])
@@ -60,14 +78,14 @@ for a, b, c in zip(processing_times1, processing_times2, processing_times3):
 print(mean_processing_times)
 print([round(x, 3) for x in mean_processing_times])
 
-# print()
+print()
 
-# x_axis = np.arange(1, len(mean_processing_times) + 1)
-# print(x_axis)
+x_axis = np.arange(1, len(mean_processing_times) + 1)
+print(x_axis)
 
-# plt.plot(x_axis, mean_processing_times)
+plt.plot(x_axis, mean_processing_times)
 # plt.yscale("log")
-# plt.title("Czasy mnozenia macierzy skala log (srednia 3 pomiarow)")
-# plt.ylabel("Processing time (s)")
-# plt.xlabel("Matrix size")
-# plt.show()
+plt.title("Czasy mnozenia macierzy MPI (srednia 3 pomiarow)")
+plt.ylabel("Processing time (s)")
+plt.xlabel("Matrix size")
+plt.show()
